@@ -1,25 +1,22 @@
-function filterOutFalsy (elem, elem2) {
- return !!elem ? elem : elem2
-
+ //Given a rating, display a star for each full rating and a full-stop for each half rating
+   
+ function showRating (rating) {
+let ratings = ""
+ for (let i = 0; i < Math.floor(rating); ++i) {
+    ratings += "*"
+    if (i !== Math.floor(rating) - 1) {
+        ratings += " "
+    }
 }
-    console.log(filterOutFalsy(0, 500))
-    console.log(filterOutFalsy(false, 10))
-    console.log(filterOutFalsy(true, 'Dog'))
-
-    function arrLength (arr){
-        return arr[arr.length-1];
+    if (!Number.isInteger(rating)) {
+ratings += " ."
     }
 
+return ratings
 
-    console.log(arrLength([1, 2, 'dog']))
-    
-    function arrSum (num) {
-        let sum = 0
-        for (let i = 0; i <= num; ++i) {
-            sum = sum + i;
-        }
-        return sum;
-    }
-    
-    console.log(arrSum(4))
 
+ }
+console.log(showRating(5));
+console.log(showRating(4));
+console.log(showRating(2.5));
+console.log(showRating(.5));
